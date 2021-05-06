@@ -532,3 +532,6 @@ FodyWeavers.xsd
 *.tlog
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudio
+
+*/Debug/*
+*/Release/*
