@@ -32,5 +32,16 @@ namespace Tampieri
                 _ => throw new InvalidCastException(),
             };
         }
+
+        public static List<Direction> GetPossibleDirections(this Action a)
+        {
+            return a switch
+            {
+                Action.Attack => new List<Direction>() { Direction.Down, Direction.Left, Direction.Right, Direction.Up },
+                Action.Move => new List<Direction>() { Direction.Down, Direction.Left, Direction.Right, Direction.Up },
+                Action.Idle => new List<Direction>() { Direction.Left, Direction.Right},
+                _ => new List<Direction>(),
+            };
+        }
     }
 }
