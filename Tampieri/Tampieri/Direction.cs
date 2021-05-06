@@ -24,6 +24,7 @@ namespace Tampieri
                 Direction.Right => "right",
                 Direction.Down => "down",
                 Direction.Left => "left",
+                _ => throw new NotImplementedException(),
             };
         }
     }
