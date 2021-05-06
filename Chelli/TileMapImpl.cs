@@ -1,5 +1,5 @@
-/// <summary>A TileMap.</summary>
-public sealed class TileMapImpl : TileMap
+/// <summary>A ITileMap.</summary>
+public sealed class TileMapImpl : ITileMap
 {
 
 	private readonly Tile[,] map;

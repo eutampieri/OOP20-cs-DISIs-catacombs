@@ -1,6 +1,6 @@
 
-/// <summary>TileMap represents a map for the game.</summary>
-public interface TileMap
+/// <summary>ITileMap represents a map for the game.</summary>
+public interface ITileMap
 {
 	/// <returns>the height of the map in tiles.</returns>
 	int Height();
@@ -10,7 +10,7 @@ public interface TileMap
 
 	/// <param name="x">column.</param>
 	/// <param name="y">row.</param>
-	/// <returns>the Tile at column x and row y in the TileMap.</returns>
+	/// <returns>the Tile at column x and row y in the map.</returns>
 	Tile At(int x, int y);
 
 	/// <param name="x">column.</param>

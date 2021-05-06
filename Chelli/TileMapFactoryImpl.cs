@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 /// <summary>A TileMapFactory.</summary>
-public sealed class TileMapFactoryImpl : TileMapFactory
+public sealed class TileMapFactoryImpl : ITileMapFactory
 {
 	private const int NORMAL_N_ROOMS = 16;
 	private const int NORMAL_MIN_ROOM_SIDE = 8;
@@ -18,9 +18,6 @@ public sealed class TileMapFactoryImpl : TileMapFactory
 	private class Point
 	{
 		public readonly int x, y;
-
-		public Point() : this(0, 0)
-		{ }
 
 		public Point(int x, int y)
 		{
@@ -176,8 +173,8 @@ public sealed class TileMapFactoryImpl : TileMapFactory
 	/// <param name="maxRoomSide"> maximum side length of a room</param>
 	/// <param name="minRoomDist"> minimum distance between two rooms' centers</param>
 	/// <param name="maxRoomDist"> maximum distance with the closest room's center for each room center</param>
-	/// <returns> A Tilemap with nRooms square rooms connected by corridors in a tree, plus some random corridors minRoomDist &gt; maxRoomSide is recommended</returns>
-	private TileMap Normal(int nRooms, int minRoomSide, int maxRoomSide, int minRoomDist,
+	/// <returns> A ITilemap with nRooms square rooms connected by corridors in a tree, plus some random corridors minRoomDist &gt; maxRoomSide is recommended</returns>
+	private ITileMap Normal(int nRooms, int minRoomSide, int maxRoomSide, int minRoomDist,
 			int maxRoomDist)
 	{
 		if (nRooms <= 0 || minRoomSide <= 0 || maxRoomSide < minRoomSide || minRoomDist < 0
@@ -237,22 +234,22 @@ public sealed class TileMapFactoryImpl : TileMapFactory
 		return new TileMapImpl(res);
 	}
 
-	/// <returns>a TileMap with the default settings using a given seed</returns>
-	public TileMap SeededDef(long seed)
+	/// <returns>a ITileMap with the default settings using a given seed</returns>
+	public ITileMap SeededDef(long seed)
 	{
 		rand = new Random((int)seed);
 		return Normal(NORMAL_N_ROOMS, NORMAL_MIN_ROOM_SIDE, NORMAL_MAX_ROOM_SIDE, NORMAL_MIN_ROOM_DIST,
 				NORMAL_MAX_ROOM_DIST); // and call the normal builder with default parameters
 	}
 
-	/// <returns>a TileMap with the default settings using a seed based on time</returns>
-	public TileMap Def()
+	/// <returns>a ITileMap with the default settings using a seed based on time</returns>
+	public ITileMap Def()
 	{
 		return SeededDef(DateTime.Now.Ticks);
 	}
 
-	/// <returns>an hxw TileMap with walls on the borders and floor inside</returns>
-	public TileMap Empty(int h, int w)
+	/// <returns>an hxw ITileMap with walls on the borders and floor inside</returns>
+	public ITileMap Empty(int h, int w)
 	{
 		if (h < 1 || w < 1)
 		{

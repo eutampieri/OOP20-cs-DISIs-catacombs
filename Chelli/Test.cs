@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 class Test
 {
-	private static void CheckMap(TileMap m)
+	private static void CheckMap(ITileMap m)
 	{
 		for (int y = 0; y < m.Height(); y++)
 		{
@@ -37,7 +37,7 @@ class Test
 
 	private static void TestEmptyMap()
 	{
-		TileMap tm = new TileMapFactoryImpl().Empty(3, 3);
+		ITileMap tm = new TileMapFactoryImpl().Empty(3, 3);
 		Debug.Assert(Tile.FLOOR == tm.At(1, 1));
 		for (int x = 0; x < 3; x++)
 		{
@@ -58,7 +58,7 @@ class Test
 	private static void TestSpawnPoints()
 	{
 		int mapSize = 8;
-		TileMap tm = new TileMapFactoryImpl().Empty(mapSize, mapSize);
+		ITileMap tm = new TileMapFactoryImpl().Empty(mapSize, mapSize);
 		Debug.Assert(Tile.FLOOR == tm.At(1, 1));
 		for (int y = 0; y < mapSize; y++)
 		{
@@ -72,7 +72,7 @@ class Test
 	private static void TestOutOfBounds()
 	{
 		int mapSize = 5;
-		TileMap tm = new TileMapFactoryImpl().Empty(mapSize, mapSize);
+		ITileMap tm = new TileMapFactoryImpl().Empty(mapSize, mapSize);
 		Debug.Assert(Tile.VOID == tm.At(-1, -1));
 		Debug.Assert(Tile.VOID == tm.At(mapSize + 1, mapSize + 1));
 		Debug.Assert(Tile.VOID == tm.At(-1, 0));
@@ -80,13 +80,13 @@ class Test
 
 	private static void PrintMapExample()
 	{
-		TileMapFactory tmf = new TileMapFactoryImpl();
-		TileMap tm = tmf.Def();
+		ITileMapFactory tmf = new TileMapFactoryImpl();
+		ITileMap tm = tmf.Def();
 		for (int y = 0; y < tm.Height(); ++y)
 		{
 			for (int x = 0; x < tm.Width(); ++x)
 			{
-				if (tm.At(y, x) == Tile.WALL)
+				if (tm.At(x, y) == Tile.WALL)
 				{
 					Console.Write("#");
 				}
