@@ -18,7 +18,7 @@ namespace Tampieri.Model
             return a.ToString().ToLower();
         }
 
-        public static Action ToAction(this String s)
+        public static Action? ToAction(this String s)
         {
             return s switch
             {
@@ -26,7 +26,7 @@ namespace Tampieri.Model
                 "attack" => Action.Attack,
                 "idle" => Action.Idle,
                 "die" => Action.Die,
-                _ => throw new InvalidCastException(),
+                _ => null,
             };
         }
 
