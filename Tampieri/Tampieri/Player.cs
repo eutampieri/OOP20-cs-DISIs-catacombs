@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Tampieri.Ui;
 
-namespace Tampieri
+namespace Tampieri.Model
 {
-    class Player : IAnimatable, ILivingCharacter
+    sealed public class Player : IAnimatable, ILivingCharacter
     {
         private int _health;
         private string name;

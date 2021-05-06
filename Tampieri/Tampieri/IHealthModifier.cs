@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tampieri
+﻿namespace Tampieri.Model
 {
-    interface IHealthModifier
+    public interface IHealthModifier
     {
         int HealthDelta { get; }
         void UseOn(ILivingCharacter character)

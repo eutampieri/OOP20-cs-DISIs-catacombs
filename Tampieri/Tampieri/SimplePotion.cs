@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tampieri
+namespace Tampieri.Model
 {
-    class SimplePotion : IHealthModifier
+    public sealed class SimplePotion : IHealthModifier
     {
         private string name;
         private int healingPower;

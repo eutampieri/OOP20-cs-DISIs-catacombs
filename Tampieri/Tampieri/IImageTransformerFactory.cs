@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SixLabors.ImageSharp;
 
-namespace Tampieri
+namespace Tampieri.Utils
 {
-    interface IImageTransformerFactory
+    public interface IImageTransformerFactory
     {
         Func<Image, Image> rotate(double degrees);
         Func<Image, Image> scale(double factor);

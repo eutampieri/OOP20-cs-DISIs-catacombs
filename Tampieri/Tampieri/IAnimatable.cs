@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Tampieri.Model;
 
-namespace Tampieri
+namespace Tampieri.Ui
 {
-    interface IAnimatable
+    public interface IAnimatable
     {
         bool CanPerform(Action a);
     }
