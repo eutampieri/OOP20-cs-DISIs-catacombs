@@ -44,7 +44,7 @@ namespace TestTampieri
                 badPotion.UseOn(PLAYER);
             }
             Assert.AreEqual(PLAYER.Health, 0);
-            Assert.IsTrue(PLAYER.IsAlive());
+            Assert.IsFalse(PLAYER.IsAlive());
         }
     }
 }

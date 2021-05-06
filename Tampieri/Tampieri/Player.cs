@@ -16,7 +16,8 @@ namespace Tampieri.Model
         }
         public bool CanPerform(Action a)
         {
-            return a switch {
+            return a switch
+            {
                 Action.Attack => true,
                 Action.Die => true,
                 Action.Move => true,

@@ -9,7 +9,7 @@ namespace Tampieri.Model
         Attack,
         Idle,
         Die,
-        
+
     }
     public static class ActionExtension
     {
@@ -36,7 +36,7 @@ namespace Tampieri.Model
             {
                 Action.Attack => new List<Direction>() { Direction.Down, Direction.Left, Direction.Right, Direction.Up },
                 Action.Move => new List<Direction>() { Direction.Down, Direction.Left, Direction.Right, Direction.Up },
-                Action.Idle => new List<Direction>() { Direction.Left, Direction.Right},
+                Action.Idle => new List<Direction>() { Direction.Left, Direction.Right },
                 _ => new List<Direction>(),
             };
         }
