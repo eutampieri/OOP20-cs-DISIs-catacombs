@@ -8,12 +8,10 @@ namespace Tampieri
 {
     interface IHealthModifier
     {
-        int GetHealthDelta();
+        int HealthDelta { get; }
         void UseOn(ILivingCharacter character)
         {
-            int currentHealth = character.GetCurrentHealth();
-            currentHealth += this.GetHealthDelta();
-            character.SetHealth(currentHealth);
+            int currentHealth = character.Health += this.HealthDelta;
         }
         string ToString();
     }

@@ -8,11 +8,10 @@ namespace Tampieri
 {
     interface ILivingCharacter
     {
-        int GetCurrentHealth();
-        void SetHealth(int health);
+        int Health { get; set; }
         bool IsAlive()
         {
-            return this.GetCurrentHealth() > 0;
+            return this.Health > 0;
         }
     }
 }
