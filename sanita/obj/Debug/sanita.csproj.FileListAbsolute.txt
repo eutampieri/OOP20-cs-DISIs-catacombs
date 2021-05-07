@@ -1,8 +1,0 @@
-C:\Users\39342\source\repos\eutampieri\OOP20-cs-DISIs-catacombs\sanita\obj\Debug\sanita.csprojAssemblyReference.cache
-C:\Users\39342\source\repos\eutampieri\OOP20-cs-DISIs-catacombs\sanita\bin\Debug\sanita.exe.config
-C:\Users\39342\source\repos\eutampieri\OOP20-cs-DISIs-catacombs\sanita\bin\Debug\sanita.exe
-C:\Users\39342\source\repos\eutampieri\OOP20-cs-DISIs-catacombs\sanita\bin\Debug\sanita.pdb
-C:\Users\39342\source\repos\eutampieri\OOP20-cs-DISIs-catacombs\sanita\obj\Debug\sanita.exe
-C:\Users\39342\source\repos\eutampieri\OOP20-cs-DISIs-catacombs\sanita\obj\Debug\sanita.pdb
-C:\Users\39342\source\repos\eutampieri\OOP20-cs-DISIs-catacombs\sanita\obj\Debug\sanita.Properties.Resources.resources
-C:\Users\39342\source\repos\eutampieri\OOP20-cs-DISIs-catacombs\sanita\obj\Debug\sanita.csproj.GenerateResource.cache
