@@ -11,25 +11,26 @@ public sealed class TileMapImpl : ITileMap
 		map = (Tile[,])m.Clone();
 	}
 
-	public int Height()
+	public int Height
 	{
-		return map.GetLength(0);
+		get => map.GetLength(0);
 	}
 
-	public int Width()
+	public int Width
 	{
-		return map.GetLength(1);
+		get => map.GetLength(1);
 	}
 
-	public Tile At(int x, int y)
+	public Tile this[int x, int y]
 	{
-		if (y < 0 || x < 0 || y >= this.Height() || x >= this.Width())
-		{
-			return Tile.VOID;
+		get {
+			if (y < 0 || x < 0 || y >= this.Height || x >= this.Width)
+			{
+				return Tile.Void;
+			}
+			return map[y, x];
 		}
-		return map[y, x];
 	}
-
 
 	/// <returns>Internal representation of the tilemap. used for testing.</returns>
 	public Tile[,] GetMap()
@@ -39,7 +40,7 @@ public sealed class TileMapImpl : ITileMap
 
 	public bool CanSpawnAt(int x, int y)
 	{
-		return this.At(x, y).IsWalkable() && this.At(x - 1, y).IsWalkable() && this.At(x + 1, y).IsWalkable()
-			&& this.At(x, y - 1).IsWalkable() && this.At(x, y + 1).IsWalkable();
+		return this[x, y].IsWalkable() && this[x - 1, y].IsWalkable() && this[x + 1, y].IsWalkable()
+			&& this[x, y - 1].IsWalkable() && this[x, y + 1].IsWalkable();
 	}
 }

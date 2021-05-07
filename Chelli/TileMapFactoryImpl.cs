@@ -81,7 +81,7 @@ public sealed class TileMapFactoryImpl : ITileMapFactory
 					x--;
 				}
 			}
-			res[y, x] = Tile.FLOOR;
+			res[y, x] = Tile.Floor;
 		}
 		while (y != b.y)
 		{
@@ -93,7 +93,7 @@ public sealed class TileMapFactoryImpl : ITileMapFactory
 			{
 				y--;
 			}
-			res[y, x] = Tile.FLOOR;
+			res[y, x] = Tile.Floor;
 		}
 		while (x != b.x)
 		{
@@ -105,7 +105,7 @@ public sealed class TileMapFactoryImpl : ITileMapFactory
 			{
 				x--;
 			}
-			res[y, x] = Tile.FLOOR;
+			res[y, x] = Tile.Floor;
 		}
 	}
 
@@ -195,7 +195,7 @@ public sealed class TileMapFactoryImpl : ITileMapFactory
 		{
 			for (int x = 0; x < w; x++)
 			{
-				res[y, x] = Tile.WALL;
+				res[y, x] = Tile.Wall;
 			}
 		}
 		foreach (Point p in centers)
@@ -206,7 +206,7 @@ public sealed class TileMapFactoryImpl : ITileMapFactory
 			{
 				for (int x = p.x - roomW / 2; x <= p.x + (roomW + 1) / 2; x++)
 				{
-					res[y, x] = Tile.FLOOR;
+					res[y, x] = Tile.Floor;
 				}
 			}
 		}
@@ -258,19 +258,19 @@ public sealed class TileMapFactoryImpl : ITileMapFactory
 		var res = new Tile[h, w];
 		for (int y = 0; y < h; y++)
 		{
-			res[y, 0] = Tile.WALL;
-			res[y, w - 1] = Tile.WALL;
+			res[y, 0] = Tile.Wall;
+			res[y, w - 1] = Tile.Wall;
 		}
 		for (int x = 0; x < w; x++)
 		{
-			res[0, x] = Tile.WALL;
-			res[h - 1, x] = Tile.WALL;
+			res[0, x] = Tile.Wall;
+			res[h - 1, x] = Tile.Wall;
 		}
 		for (int y = 1; y < h - 1; y++)
 		{
 			for (int x = 1; x < w - 1; x++)
 			{
-				res[y, x] = Tile.FLOOR;
+				res[y, x] = Tile.Floor;
 			}
 		}
 		return new TileMapImpl(res);

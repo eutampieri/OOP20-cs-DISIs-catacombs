@@ -3,7 +3,7 @@ public static class TileExtensions
 	/// <returns>if the Tile can be walked on.
 	public static bool IsWalkable(this Tile t)
 	{
-		return t == Tile.FLOOR || t == Tile.STAIRS;
+		return t == Tile.Floor || t == Tile.Stairs;
 	}
 }
 
@@ -11,11 +11,11 @@ public static class TileExtensions
 public enum Tile
 {
 	/// <summary>A void tile, which contains nothing.</summary>
-	VOID,
+	Void,
 	/// <summary>A wall tile, which forms a wall.</summary>
-	WALL,
+	Wall,
 	/// <summary>A floor tile, which makes floors.</summary>
-	FLOOR,
+	Floor,
 	/// <summary>A stair tile, which will form flight of stairs.</summary>
-	STAIRS,
+	Stairs,
 }
