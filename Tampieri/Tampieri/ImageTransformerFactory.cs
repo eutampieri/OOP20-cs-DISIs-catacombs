@@ -5,7 +5,7 @@ using System;
 namespace Tampieri.Utils
 {
     /// <summary>This is an <c>IImageTransformerFactory</c> implemented using <c>ImageSharp</c>
-    public class ImageTransformerFactory : IImageTransformerFactory
+    public sealed class ImageTransformerFactory : IImageTransformerFactory
     {
         public Func<Image, Image> flip(bool flipX, bool flipY)
         {
