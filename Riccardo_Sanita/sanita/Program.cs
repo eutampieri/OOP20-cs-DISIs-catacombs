@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tampieri
+namespace sanita
 {
     class Program
     {
