@@ -2,6 +2,7 @@
 
 namespace Tampieri.Model
 {
+    /// <summary>Useful for representing directions</summary>
     public enum Direction
     {
         Up,
@@ -12,6 +13,7 @@ namespace Tampieri.Model
 
     public static class DirectionExtentions
     {
+        /// <summary>Convert a <c>Direction</c> to string, useful for file representation</summary>
         public static string ToString(this Direction d)
         {
             return d switch

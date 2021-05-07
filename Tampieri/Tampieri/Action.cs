@@ -22,13 +22,13 @@ namespace Tampieri.Model
     }
     public static class ActionExtension
     {
-        /// <summary>Convert an entity to string, useful for file representation</summary>
+        /// <summary>Convert an <c>Action</c> to string, useful for file representation</summary>
         public static string ToString(this Action a)
         {
             return a.ToString().ToLower();
         }
 
-        /// <summary>Get the corresponding action for a string. It can be null if the string is invalid</summary>
+        /// <summary>Get the corresponding <c>Action</c> for a string. It can be null if the string is invalid</summary>
         public static Action? ToAction(this String s)
         {
             return s switch
