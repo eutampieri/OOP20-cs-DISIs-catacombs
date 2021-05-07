@@ -1,5 +1,6 @@
 ﻿namespace Tampieri.Model
 {
+    /// <summary>A simple potion, which increases a <c>LivingCharacter</c>'s health by a fixed amount</summary>
     public sealed class SimplePotion : IHealthModifier
     {
         private string name;
