@@ -3,10 +3,12 @@ using Tampieri.Ui;
 
 namespace Tampieri.Model
 {
+    /// <summary>The player, whose movements are dictated by the gamer</summary>
     sealed public class Player : IAnimatable, ILivingCharacter
     {
         private int _health;
         private string name;
+        ///<summary>The caracter's health, ranging from 0 to 100</summary>
         public int Health { get => _health; set => _health = Math.Clamp(value, 0, 100); }
 
         public Player(string name)
